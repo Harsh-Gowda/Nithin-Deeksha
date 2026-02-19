@@ -9,8 +9,8 @@ export default async function handler(req: any, res: any) {
   const { firstName, lastName, email, attending, dietaryRestrictions } = req.body;
 
   // Validation
-  if (!firstName || !lastName || !email) {
-    return res.status(400).json({ error: 'First name, last name, and email are required.' });
+  if (!firstName) {
+    return res.status(400).json({ error: 'Name is required.' });
   }
 
   try {

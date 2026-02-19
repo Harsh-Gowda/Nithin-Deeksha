@@ -93,8 +93,14 @@ const Hero = () => {
           className="w-full flex flex-col items-center"
         >
           <p className="font-script text-2xl md:text-4xl text-gold mb-2">The Wedding of</p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-8xl lg:text-9xl text-white uppercase tracking-[0.05em] sm:tracking-[0.1em] font-light leading-tight mb-8 break-words max-w-[90vw] mx-auto">
-            Nithin <span className="text-gold font-light">&</span> Deekshitha
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-8xl lg:text-9xl text-white uppercase tracking-[0.05em] sm:tracking-[0.1em] font-light leading-none mb-8 break-words max-w-[90vw] mx-auto flex flex-col items-center gap-2 md:gap-4">
+            <span className="block">Nithin</span>
+            <span className="flex items-center justify-center">
+              <svg className="w-8 h-8 md:w-16 lg:w-20 text-gold" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </span>
+            <span className="block">Deekshitha</span>
           </h1>
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 font-sans text-gold text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase max-w-[90vw]">
             <span>Sunday, April 26, 2026</span>
@@ -158,8 +164,14 @@ const Invitation = () => {
           <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-charcoal/50">Together with their families</p>
 
           <div className="relative">
-            <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl text-black uppercase tracking-widest font-light relative z-10 leading-tight mb-4 px-2">
-              Nithin <span className="text-gold text-3xl sm:text-4xl md:text-6xl align-middle">&</span> Deekshitha
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl text-black uppercase tracking-widest font-light relative z-10 leading-none mb-4 px-2 flex flex-col items-center gap-2 md:gap-4">
+              <span>Nithin</span>
+              <span className="flex items-center justify-center">
+                <svg className="w-8 h-8 md:w-12 text-gold/80" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </span>
+              <span>Deekshitha</span>
             </h2>
             {/* Subtle text shadow/glow */}
             <div className="absolute inset-0 blur-xl bg-white/50 -z-10"></div>
@@ -238,7 +250,13 @@ const RSVP = () => {
       const response = await fetch(`${API_URL}/rsvp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName, lastName, email, attending, dietaryRestrictions }),
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email: email || '',
+          attending,
+          dietaryRestrictions: dietaryRestrictions || ''
+        }),
       });
 
       const data = await response.json();
@@ -286,21 +304,22 @@ const RSVP = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-left">
-                <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">First Name</label>
+                <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">Name</label>
                 <input
                   required
                   type="text"
                   value={firstName}
+                  placeholder="Your full name"
                   onChange={(e) => setFirstName(e.target.value)}
                   className="w-full bg-cream/30 border-b border-charcoal/20 p-2 focus:border-gold outline-none transition-colors font-serif text-xl"
                 />
               </div>
               <div className="text-left">
-                <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">Last Name</label>
+                <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">Address</label>
                 <input
-                  required
                   type="text"
                   value={lastName}
+                  placeholder="Your location/address"
                   onChange={(e) => setLastName(e.target.value)}
                   className="w-full bg-cream/30 border-b border-charcoal/20 p-2 focus:border-gold outline-none transition-colors font-serif text-xl"
                 />
@@ -308,9 +327,8 @@ const RSVP = () => {
             </div>
 
             <div className="text-left">
-              <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">Email Address</label>
+              <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">Email Address (Optional)</label>
               <input
-                required
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -342,10 +360,11 @@ const RSVP = () => {
             </div>
 
             <div className="text-left">
-              <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">Dietary Restrictions</label>
+              <label className="block font-sans text-xs uppercase tracking-widest text-charcoal mb-2">Dietary Restrictions (Optional)</label>
               <input
                 type="text"
                 value={dietaryRestrictions}
+                placeholder="Any allergies or requirements"
                 onChange={(e) => setDietaryRestrictions(e.target.value)}
                 className="w-full bg-cream/30 border-b border-charcoal/20 p-2 focus:border-gold outline-none transition-colors font-serif text-xl"
               />
