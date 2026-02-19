@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-script: "Pinyon Script", cursive;
+  
+  /* Metallic Edge Palette */
+  --color-black: #1A1A1A;
+  --color-gold: #C9B896;
+  --color-gold-light: #E8DCC4;
+  --color-gold-dark: #A89675;
+  --color-white: #FFFFFF;
+  --color-cream: #F5F1E8;
+  --color-charcoal: #2D2D2D;
+  
+  --animate-shimmer: shimmer 2s linear infinite;
+  
+  @keyframes shimmer {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+}
+
+/* Custom Utilities for Texture */
+.gold-texture-border {
+  background: linear-gradient(180deg, #C9B896 0%, rgba(201, 184, 150, 0) 100%);
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+  mask-size: cover;
+}
+
+.metallic-text {
+  background: linear-gradient(to right, #C9B896, #E8DCC4, #C9B896);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+}
