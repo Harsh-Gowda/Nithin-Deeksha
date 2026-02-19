@@ -85,19 +85,20 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-32 gold-texture-border z-20 pointer-events-none"></div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 mb-12">
+      <div className="relative z-10 text-center px-6 mb-12 w-full max-w-[100vw]">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
+          className="w-full flex flex-col items-center"
         >
-          <p className="font-script text-3xl md:text-4xl text-gold mb-4">The Wedding of</p>
-          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-white uppercase tracking-[0.1em] font-light leading-none mb-6">
+          <p className="font-script text-2xl md:text-4xl text-gold mb-2">The Wedding of</p>
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-8xl lg:text-9xl text-white uppercase tracking-[0.05em] sm:tracking-[0.1em] font-light leading-tight mb-8 break-words max-w-[90vw] mx-auto">
             Nithin <span className="text-gold font-light">&</span> Deekshitha
           </h1>
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 font-sans text-gold text-xs md:text-sm tracking-[0.3em] uppercase">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 font-sans text-gold text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase max-w-[90vw]">
             <span>Sunday, April 26, 2026</span>
-            <span className="hidden md:inline">•</span>
+            <span className="hidden md:inline text-gold/50">•</span>
             <span>Vajradumbi House, Kodekal, Ujire</span>
           </div>
         </motion.div>
@@ -137,7 +138,7 @@ const Invitation = () => {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-3xl mx-auto bg-white p-12 md:p-24 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative border border-gold/20"
+        className="max-w-3xl mx-auto bg-white p-8 sm:p-12 md:p-24 shadow-[0_20px_50px_rgba(0,0,0,0.05)] relative border border-gold/20"
       >
         {/* Paper Texture Overlay */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')]"></div>
@@ -157,8 +158,8 @@ const Invitation = () => {
           <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-charcoal/50">Together with their families</p>
 
           <div className="relative">
-            <h2 className="font-serif text-6xl md:text-7xl text-black uppercase tracking-widest font-light relative z-10">
-              Nithin <span className="text-gold text-5xl md:text-6xl align-middle">&</span> Deekshitha
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-7xl text-black uppercase tracking-widest font-light relative z-10 leading-tight mb-4 px-2">
+              Nithin <span className="text-gold text-3xl sm:text-4xl md:text-6xl align-middle">&</span> Deekshitha
             </h2>
             {/* Subtle text shadow/glow */}
             <div className="absolute inset-0 blur-xl bg-white/50 -z-10"></div>
@@ -173,20 +174,20 @@ const Invitation = () => {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-4 bg-gold/30"></div>
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-4 bg-gold/30"></div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
               <div className="text-center">
                 <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-charcoal/60 mb-2">Sunday</p>
-                <p className="font-serif text-3xl text-black">April 26th</p>
+                <p className="font-serif text-2xl md:text-3xl text-black">April 26th</p>
               </div>
-              <div className="w-[1px] h-12 bg-gold/20 hidden md:block"></div>
+              <div className="w-12 h-[1px] md:w-[1px] md:h-12 bg-gold/20"></div>
               <div className="text-center">
                 <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-charcoal/60 mb-2">Ceremony</p>
-                <p className="font-serif text-3xl text-gold">12:00 PM</p>
+                <p className="font-serif text-2xl md:text-3xl text-gold">12:00 PM</p>
               </div>
-              <div className="w-[1px] h-12 bg-gold/20 hidden md:block"></div>
+              <div className="w-12 h-[1px] md:w-[1px] md:h-12 bg-gold/20"></div>
               <div className="text-center">
                 <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-charcoal/60 mb-2">Location</p>
-                <p className="font-serif text-3xl text-black">Vajradumbi House</p>
+                <p className="font-serif text-2xl md:text-3xl text-black leading-tight">Vajradumbi<br className="md:hidden" /> House</p>
               </div>
             </div>
 
@@ -264,7 +265,7 @@ const RSVP = () => {
     <section id="rsvp" className="bg-cream py-32 px-4">
       <div className="max-w-2xl mx-auto text-center">
         <span className="font-sans text-gold text-xs uppercase tracking-[0.3em] mb-4 block">Kindly Reply</span>
-        <h2 className="font-serif text-5xl text-black uppercase tracking-widest mb-12">RSVP</h2>
+        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-black uppercase tracking-widest mb-12">RSVP</h2>
 
         {isSuccess ? (
           <motion.div
