@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Montserrat", sans-serif;
-  --font-script: "Pinyon Script", cursive;
+  --font-script: "Great Vibes", cursive;
   
   /* Metallic Edge Palette */
   --color-black: #1A1A1A;
