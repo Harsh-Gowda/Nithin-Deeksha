@@ -93,7 +93,7 @@ const Hero = () => {
         >
           <p className="font-script text-3xl md:text-4xl text-gold mb-4">The Wedding of</p>
           <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-white uppercase tracking-[0.1em] font-light leading-none mb-6">
-            Nithin <span className="text-gold font-light">&</span> Deeksha
+            Nithin <span className="text-gold font-light">&</span> Deekshitha
           </h1>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 font-sans text-gold text-xs md:text-sm tracking-[0.3em] uppercase">
             <span>Sunday, April 26, 2026</span>
@@ -113,7 +113,7 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80"></div>
           <img
             src={heroImage}
-            alt="Nithin and Deeksha"
+            alt="Nithin and Deekshitha"
             className="w-full h-full object-cover grayscale opacity-80"
             referrerPolicy="no-referrer"
           />
@@ -158,7 +158,7 @@ const Invitation = () => {
 
           <div className="relative">
             <h2 className="font-serif text-6xl md:text-7xl text-black uppercase tracking-widest font-light relative z-10">
-              Nithin <span className="text-gold text-5xl md:text-6xl align-middle">&</span> Deeksha
+              Nithin <span className="text-gold text-5xl md:text-6xl align-middle">&</span> Deekshitha
             </h2>
             {/* Subtle text shadow/glow */}
             <div className="absolute inset-0 blur-xl bg-white/50 -z-10"></div>
@@ -374,7 +374,7 @@ export default function App() {
 
       <footer className="bg-black py-12 text-center border-t border-gold/10">
         <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-gray-600">
-          Nithin & Deeksha • 2026
+          Nithin & Deekshitha • 2026
         </p>
       </footer>
     </div>
