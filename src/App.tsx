@@ -93,16 +93,39 @@ const Hero = () => {
           className="w-full flex flex-col items-center"
         >
           <p className="font-script text-2xl md:text-4xl text-gold mb-2">The Wedding of</p>
-          <h1 className="flex flex-col items-center justify-center leading-none">
-            <span className="flex items-center gap-4">
-              <span className="font-script text-6xl sm:text-7xl md:text-9xl text-white normal-case tracking-normal">Nithin</span>
-              <svg className="w-10 h-10 md:w-20 md:h-20 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
-            </span>
-            <span className="font-serif text-3xl md:text-5xl text-gold/80 italic my-2">&</span>
-            <span className="font-script text-6xl sm:text-7xl md:text-9xl text-white normal-case tracking-normal">Deekshitha</span>
-          </h1>
+          <div className="flex flex-col items-center justify-center space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="flex flex-col items-center"
+            >
+              <span className="font-serif text-3xl sm:text-4xl md:text-6xl text-gold/60 uppercase tracking-[0.4em] font-light mb-4">Nithin</span>
+
+              <div className="relative py-8 md:py-12">
+                <svg className="w-16 h-16 md:w-24 md:h-24 text-gold/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5">
+                  <motion.path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    animate={{ pathLength: 1, opacity: 1 }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut"
+                    }}
+                  />
+                </svg>
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full h-full bg-gold/10 blur-2xl rounded-full"
+                />
+              </div>
+
+              <span className="font-serif text-3xl sm:text-4xl md:text-6xl text-white uppercase tracking-[0.4em] font-light mt-4">Deekshitha</span>
+            </motion.div>
+          </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 font-sans text-gold text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase max-w-[90vw]">
             <span>Sunday, April 26, 2026</span>
             <span className="hidden md:inline text-gold/50">•</span>
@@ -165,16 +188,22 @@ const Invitation = () => {
           <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-charcoal/50">Together with their families</p>
 
           <div className="relative">
-            <h2 className="flex flex-col items-center justify-center leading-none mb-8">
-              <span className="flex items-center gap-3">
-                <span className="font-script text-5xl md:text-7xl text-black normal-case tracking-normal">Nithin</span>
-                <svg className="w-8 h-8 md:w-12 text-gold/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            <div className="flex flex-col items-center justify-center space-y-4 mb-16">
+              <span className="font-serif text-2xl md:text-4xl text-gold/60 uppercase tracking-[0.3em] font-light">Nithin</span>
+
+              <div className="relative">
+                <svg className="w-10 h-10 text-gold/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5">
+                  <motion.path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  />
                 </svg>
-              </span>
-              <span className="font-serif text-2xl md:text-3xl text-gold/60 italic my-2">&</span>
-              <span className="font-script text-5xl md:text-7xl text-black normal-case tracking-normal">Deekshitha</span>
-            </h2>
+              </div>
+
+              <span className="font-serif text-2xl md:text-4xl text-black uppercase tracking-[0.3em] font-light">Deekshitha</span>
+            </div>
             {/* Subtle text shadow/glow */}
             <div className="absolute inset-0 blur-xl bg-white/50 -z-10"></div>
           </div>
