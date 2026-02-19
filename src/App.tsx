@@ -214,8 +214,8 @@ const Invitation = () => {
 };
 
 
-// API URL — points to Express backend
-const API_URL = 'http://localhost:3001';
+// API URL — points to Express backend (proxied locally, direct on Vercel)
+const API_URL = '/api';
 
 // RSVP Section
 const RSVP = () => {
