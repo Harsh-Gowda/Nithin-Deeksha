@@ -16,9 +16,15 @@ export default async function handler(req: any, res: any) {
   try {
     const dbUrl = process.env.DATABASE_URL;
 
-    if (!dbUrl || dbUrl.includes('username:password')) {
+    if (!dbUrl) {
       return res.status(500).json({
-        error: 'Database configuration missing on Vercel. Please add DATABASE_URL (the real one from Neon) to your Vercel Environment Variables.'
+        error: 'DATABASE_URL is undefined on Vercel. Please ensure you have added it to Settings -> Environment Variables and then RE-DEPLOYED.'
+      });
+    }
+
+    if (dbUrl.includes('username:password')) {
+      return res.status(500).json({
+        error: 'DATABASE_URL still contains the placeholder "username:password". Please update it in Vercel Settings with your real Neon connection string.'
       });
     }
 
