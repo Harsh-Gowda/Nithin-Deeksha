@@ -93,38 +93,52 @@ const Hero = () => {
           className="w-full flex flex-col items-center"
         >
           <p className="font-script text-2xl md:text-4xl text-gold mb-2">The Wedding of</p>
-          <div className="flex flex-col items-center justify-center space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="flex flex-col items-center"
+          <div className="flex flex-col items-center justify-center -space-y-4 md:-space-y-8">
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2 }}
+              className="font-script text-6xl sm:text-7xl md:text-9xl text-white normal-case relative z-10"
             >
-              <span className="font-serif text-3xl sm:text-4xl md:text-6xl text-gold/60 uppercase tracking-[0.4em] font-light mb-4">Nithin</span>
+              Nithin
+            </motion.span>
 
-              <div className="relative py-8 md:py-12">
-                <svg className="w-16 h-16 md:w-24 md:h-24 text-gold/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5">
-                  <motion.path
-                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-                    initial={{ pathLength: 0, opacity: 0 }}
-                    animate={{ pathLength: 1, opacity: 1 }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut"
-                    }}
-                  />
-                </svg>
-                <motion.div
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full h-full bg-gold/10 blur-2xl rounded-full"
+            <div className="relative h-24 md:h-40 w-32 md:w-48 flex items-center justify-center">
+              <svg className="w-full h-full text-gold/80" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.8">
+                <motion.path
+                  d="M50 10 C 50 10, 30 15, 30 40 C 30 65, 50 85, 50 85 C 50 85, 70 65, 70 40 C 70 15, 50 10, 50 10"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={{ pathLength: 1, opacity: 1 }}
+                  transition={{
+                    duration: 3,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 1
+                  }}
                 />
-              </div>
+                <motion.path
+                  d="M50 0 L 50 10"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                />
+                <motion.path
+                  d="M50 85 L 50 100"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.5, delay: 2.5 }}
+                />
+              </svg>
+            </div>
 
-              <span className="font-serif text-3xl sm:text-4xl md:text-6xl text-white uppercase tracking-[0.4em] font-light mt-4">Deekshitha</span>
-            </motion.div>
+            <motion.span
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, delay: 0.3 }}
+              className="font-script text-6xl sm:text-7xl md:text-9xl text-white normal-case relative z-10"
+            >
+              Deekshitha
+            </motion.span>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 font-sans text-gold text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase max-w-[90vw]">
             <span>Sunday, April 26, 2026</span>
@@ -188,21 +202,23 @@ const Invitation = () => {
           <p className="font-sans text-[10px] uppercase tracking-[0.3em] text-charcoal/50">Together with their families</p>
 
           <div className="relative">
-            <div className="flex flex-col items-center justify-center space-y-4 mb-16">
-              <span className="font-serif text-2xl md:text-4xl text-gold/60 uppercase tracking-[0.3em] font-light">Nithin</span>
+            <div className="flex flex-col items-center justify-center -space-y-4 md:-space-y-6 mb-16 px-4">
+              <span className="font-script text-6xl md:text-8xl text-black normal-case">Nithin</span>
 
-              <div className="relative">
-                <svg className="w-10 h-10 text-gold/30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5">
+              <div className="w-20 md:w-32 h-16 md:h-24">
+                <svg className="w-full h-full text-gold/60" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1">
                   <motion.path
-                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    d="M50 10 C 50 10, 30 15, 30 40 C 30 65, 50 85, 50 85 C 50 85, 70 65, 70 40 C 70 15, 50 10, 50 10"
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
-                    transition={{ duration: 4, repeat: Infinity }}
+                    transition={{ duration: 2.5, ease: "easeInOut" }}
                   />
+                  <path d="M50 0 L 50 10" opacity="0.4" />
+                  <path d="M50 85 L 50 100" opacity="0.4" />
                 </svg>
               </div>
 
-              <span className="font-serif text-2xl md:text-4xl text-black uppercase tracking-[0.3em] font-light">Deekshitha</span>
+              <span className="font-script text-6xl md:text-8xl text-black normal-case">Deekshitha</span>
             </div>
             {/* Subtle text shadow/glow */}
             <div className="absolute inset-0 blur-xl bg-white/50 -z-10"></div>
